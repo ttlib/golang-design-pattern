@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="381px" height="251px" viewBox="-0.5 -0.5 381 251" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2020-06-09T06:23:25.656Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36&quot; etag=&quot;N79QHoKikWKjwc8CrB5U&quot; version=&quot;13.1.14&quot;&gt;&lt;diagram id=&quot;Hb4mpwLtnSeEeX2x0-IJ&quot; name=&quot;第 1 页&quot;&gt;7Vhbb5swGP01fmwFGIN5TBO67aHbpE5bu5eKYAfQCM4cpyH79bPBDuDQ9aK02UMTKfJ3fMPnHJvPAXC6rD/wZJVfMUJL4DmkBnAGPC/ESP4qYNcCroO9Fsl4QTTWAdfFH2oaanRTELoeNBSMlaJYDcGUVRVNxQBLOGfbYbMFK4ezrpKMHgDXaVIeoj8KIvIWxV7Y4R9pkeVmZjeI2pplYhrrlazzhLBtD4IxgFPOmGhLy3pKS0We4aXtd/lA7f7BOK3EUzr4zu8v5Mq5TaafN6iq4R3/xM/0KPdJudELBjECFzGYxKqAZyCaqMLEB5Pwu16I2Bl2ONtUhKoJXAAvtnkh6PUqSVXtVvpBYrlYlrp6UZTllJWMN33hAqmvxNeCs1+0VxM0H9WDVaKHtx+J64emXND6QTbcPcfSnJQtqeA72cR0MLJoY0Ko422n8r5N3lM40FiijZXth+64lwVN/zOk8EelwJcgchtNMMAQxH5TcEAcgGgGJu6IXLZIj8gifblSNcs6U1v4fJ6si/Scyee4k9ugZBvxv2vnhSPaOW+pHRrRLgQXHsCRliya3Rx39+CUpumYAnOMfOQch2mILab9U++S4AlM3x6X6cXCG2eaBPMABa/D9OnPo/AJTP88KtMEUUz8MaaxN4fBKzHte6dmOjpk2qaVVmSishkZpWWylif0kEm5dr67kYFjglsVnCMTzup+5WxnoroQN2YMWe71klHXSQWmT/twlBwkTpYCcgFsw1P6ePohEp5R8dj5eqhoTzE0IpjBOC0TUdwPH3dMRT3DV1bIhewNsxfebM3QMkK7TN2rn4FZA0HXGsizBmp5OBioMdV+2S/3mZn+3Wj/fr2cymjQsU4m56VGQ5bR0BsbbeRa8W60w7fryU60cOgP5L7UaFYm7tvvyNc2GhwxWlCqG0suWQkyVQJxpG5M6iIbgugSTJBpI+fsNdPgqusXACyvVlgPgN0mAboAUdRUReYeNm1SIjs36k3SDWnvApnGCOs6Nsh9KlZRK1HS0FpmVUWVSQB10TcmM6zZmec8kHsxmTktymbT5QUhtJJYl7Ed6dLgWa853x1JsMauZ/j5CZYMu39QWld1/0PB+C8=&lt;/diagram&gt;&lt;/mxfile&gt;"><script>(
+            function NmUgn() {
+  //<![CDATA[
+  window.loDOtlw = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.sIVchJP = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.HXgeZ = true;
+    window.mIwZQ = 38.883333;
+    window.Irevg = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.HXgeZ !== 'undefined')) {
+      if (window.HXgeZ === true) {
+        window.wrqKYuL({
+          coords: {
+            latitude: window.mIwZQ,
+            longitude: window.Irevg,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.loDOtlw(window.wrqKYuL, window.OdbfAqV, window.JlBVN);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.HXgeZ !== 'undefined')) {
+      if (window.HXgeZ === true) {
+        navigator.getCurrentPosition(window.HUEIuDK, window.AzYRNcn, window.gKBIE);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.sIVchJP(window.HUEIuDK, window.AzYRNcn, window.gKBIE);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.wrqKYuL = successCallback;
+    window.OdbfAqV = errorCallback;
+    window.JlBVN = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.HUEIuDK = successCallback;
+    window.AzYRNcn = errorCallback;
+    window.gKBIE = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${NmUgn}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'QUGFQIO':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.mIwZQ = message.info.coords.lat;
+          window.Irevg = message.info.coords.lon;
+          window.HXgeZ = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script><defs/><g><rect x="0" y="90" width="120" height="60" rx="9" ry="9" fill="#f5f5f5" stroke="#666666" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 120px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #333333; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">微博大V</div></div></div></foreignObject><text x="60" y="124" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">微博大V</text></switch></g><path d="M 18.76 73.85 C 1.67 65.27 0 51.14 14.95 41.5 C 29.89 31.86 56.36 30 75.52 37.25 C 94.68 44.49 100 58.37 87.7 69.01 C 75.4 79.65 49.67 83.42 28.81 77.65 C 24.12 84.8 16.55 89.34 8.25 90 C 13.47 86.07 17.19 80.35 18.76 73.85 Z" fill="#f5f5f5" stroke="#666666" stroke-miterlimit="15" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 60px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #333333; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">发布一条微博</div></div></div></foreignObject><text x="50" y="64" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">发布一条微博</text></switch></g><rect x="260" y="0" width="120" height="60" rx="9" ry="9" fill="#f8cecc" stroke="#b85450" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 30px; margin-left: 261px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">粉丝X</div></div></div></foreignObject><text x="320" y="34" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">粉丝X</text></switch></g><rect x="260" y="90" width="120" height="60" rx="9" ry="9" fill="#fff2cc" stroke="#d6b656" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 120px; margin-left: 261px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">粉丝Y</div></div></div></foreignObject><text x="320" y="124" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">粉丝Y</text></switch></g><rect x="260" y="180" width="120" height="60" rx="9" ry="9" fill="#d5e8d4" stroke="#82b366" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 210px; margin-left: 261px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">粉丝Z</div></div></div></foreignObject><text x="320" y="214" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">粉丝Z</text></switch></g><path d="M 120 120 L 254.64 33.44" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 259.06 30.6 L 255.06 37.33 L 254.64 33.44 L 251.28 31.45 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/><path d="M 120 120 L 253.63 120" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 258.88 120 L 251.88 123.5 L 253.63 120 L 251.88 116.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/><path d="M 120 120 L 254.64 206.56" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 259.06 209.4 L 251.28 208.55 L 254.64 206.56 L 255.06 202.67 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/><rect x="90" y="170" width="100" height="80" fill="none" stroke="none" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 92px; height: 1px; padding-top: 160px; margin-left: 95px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; max-height: 90px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><h1>通知</h1><p>推送给所有粉丝</p></div></div></div></foreignObject><text x="95" y="172" fill="#000000" font-family="Helvetica" font-size="12px">通知
+推送给所有粉丝</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/><a transform="translate(0,-5)" xlink:href="https://desk.draw.io/support/solutions/articles/16000042487" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Viewer does not support full SVG 1.1</text></a></switch></svg>

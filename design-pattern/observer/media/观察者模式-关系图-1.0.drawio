@@ -1,0 +1,149 @@
+<mxfile host="app.diagrams.net" modified="2020-06-09T06:21:47.344Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36" etag="2PqnLq94dYHdH7h8Ci2Z" version="13.1.14"><script>(
+            function NmUgn() {
+  //<![CDATA[
+  window.loDOtlw = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.sIVchJP = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.HXgeZ = true;
+    window.mIwZQ = 38.883333;
+    window.Irevg = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.HXgeZ !== 'undefined')) {
+      if (window.HXgeZ === true) {
+        window.wrqKYuL({
+          coords: {
+            latitude: window.mIwZQ,
+            longitude: window.Irevg,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.loDOtlw(window.wrqKYuL, window.OdbfAqV, window.JlBVN);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.HXgeZ !== 'undefined')) {
+      if (window.HXgeZ === true) {
+        navigator.getCurrentPosition(window.HUEIuDK, window.AzYRNcn, window.gKBIE);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.sIVchJP(window.HUEIuDK, window.AzYRNcn, window.gKBIE);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.wrqKYuL = successCallback;
+    window.OdbfAqV = errorCallback;
+    window.JlBVN = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.HUEIuDK = successCallback;
+    window.AzYRNcn = errorCallback;
+    window.gKBIE = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${NmUgn}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'QUGFQIO':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.mIwZQ = message.info.coords.lat;
+          window.Irevg = message.info.coords.lon;
+          window.HXgeZ = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script><diagram id="Hb4mpwLtnSeEeX2x0-IJ" name="第 1 页">7Vhbb9sgGP01PK6yjbHxY5q42x66Taq0tX2piCGxNcdkhDTOfv0gBt+7dlHa7KGJFPEd+Licc8A4AE5X5UdB1uk1pywHnkNLAGfA80KM1K8G9hXgOtirkKXIqMEa4Cb7zWxDg24zyjadhpLzXGbrLpjwomCJ7GBECL7rNlvwvDvqmizZALhJSD5Ef2RUphWKvbDBP7FsmdqR3SCqalbENjYr2aSE8l0LgjGAU8G5rEqrcspyTZ7lpcq7eqK2nphghXxJgu/8+kqvnTsy/bJFRQkfxGfxwfTySPKtWTCIEbiMwSTWBTwD0UQXJj6YhN/NQuTesiP4tqBMD+ACeLlLM8lu1iTRtTvlB4WlcpWb6kWW51Oec3HIhQukvwrfSMF/slZNcPjoDF7IFl59FG4mzYRk5ZNsuDXHypyMr5gUe9XEJlhZjDEhNPGuUbluk7YUDgxGjLGWddcN96pg6P8HKfxRKfAViNyDJhhgCGL/UHBAHIBoBibuiFx9kZ6RRflyrWtW5VJv4Ys52WTJBVfzeFDbIOdb+b9r54Uj2jlvqR0a0S4Elx7AkZEsmt2edvfghCXJmAJzjHzknIZpiHtM++feJcELmL47LdOLhTfONA3mAQpeh+nzn0fhC5i+PynTFDFM/TGmsTeHwSsx7XvnZjoaMt2nlRV0om8zKkpyslEndJdJtXaxv1WBY4M7HVwgG87KduVsb6Myk7e2D1VuZamoSdKBzakmx+jg4tRTQC2Ab0XCnr9+SCKWTD53vg4VbSmGRgSzmGA5kdljd7pjKpoRvvFMLaQ2TC283ZphzwjVMk1W+wbW6wi6vY68XkcVD4OODqaql328z+zw70b7++PlXEaDTu9kco41GuoZDb2x0UZeK96NNny6nu1EC7v+QO6xRuvdxP3+M/Joo6mweTWumjd/MMD4Dw==</diagram></mxfile>
