@@ -8,6 +8,9 @@
 # Out of MAC system files
 *.DS_Store
 
+# Out of Project files
+golang-devloper-roadmap
+
 # Test binary, built with `go test -c`
 *.test
 
