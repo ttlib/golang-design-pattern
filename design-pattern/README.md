@@ -16,7 +16,7 @@
 - 09.代理模式（Proxy）
 - 10.组合模式（Composite）
 - 11.享元模式（Flyweight）
-- 12.[装饰者模式（Decorator）](./decorator)
+- 12.[装饰模式（Decorator）](./decorator)
 - 13.桥模式（Bridge）
 
 ## 行为型模式
