@@ -7,7 +7,7 @@
 - 03.抽象工厂模式（Abstract Factory）
 - 04.创建者模式（Builder）
 - 05.原型模式（Prototype）
-- 06.单例模式（Singleton）
+- 06.[单例模式（Singleton）](./singleton)
 
 ## 结构型模式
 

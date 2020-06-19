@@ -28,6 +28,10 @@
 
 - [uber-go / guide](https://github.com/uber-go/guide) - Uber Go 语言编码规范
 
+- [RUNOOB.COM - 设计模式](https://www.runoob.com/design-pattern)
+
+- [overnote / over-golang](https://github.com/overnote/over-golang)
+
 #### design-pattern - decorator
 
 - [心中的山水 - 设计模式之装饰者模式](https://www.cnblogs.com/of-fanruice/p/11565679.html)
