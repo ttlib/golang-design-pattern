@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func Test_fmt(t *testing.T) {
 	type User struct {
 		Name string
 		Age  int

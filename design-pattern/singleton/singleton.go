@@ -6,7 +6,7 @@ package singleton
 
 import "sync"
 
-//Singleton 是单例模式类
+//Singleton 是单例模式结构体
 type Singleton struct{}
 
 var singleton *Singleton
